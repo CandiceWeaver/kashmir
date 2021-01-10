@@ -1,0 +1,31 @@
+.header {
+	background-image: url(../img/restaurant.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-attachment: fixed;
+
+	&__phone {
+		color: $color-primary;
+	}
+
+	&__heading {
+		background-color: $color-grey-dark;
+		display: flex;
+		justify-items: center;
+		padding: 1.5rem;
+		justify-content: space-around;
+		align-items: center;
+		padding: 3rem;
+	}
+
+	&__address {
+		font-style: inherit;
+		font-weight: 700;
+	}
+
+	&__img {
+		height: 86vh;
+		width: 100%;
+		object-fit: cover;
+	}
+}

@@ -1,0 +1,39 @@
+// COLOR VARIABLES
+$color-primary: #7e590f;
+$color-secondary: #a8293a;
+$color-grey-dark: #212121;
+$color-grey-light: #efede1;
+
+// FONT VARIABLES
+$font-primary: 'Jura', sans-serif;
+
+// BOX SHADOW
+$shadow: 2rem 2rem 4rem #030303;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: $color-grey-light;
+}
+
+.btn {
+	border: 2px solid $color-secondary;
+	padding: 2rem 4rem;
+	text-decoration: none;
+	transition: all .2s;
+
+	&:hover {
+		background-color: $color-secondary;
+		color: $color-grey-light;
+	}
+}

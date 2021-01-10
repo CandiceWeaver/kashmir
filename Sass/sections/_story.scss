@@ -1,0 +1,31 @@
+.story {
+	background-image: linear-gradient(to right bottom, rgba($color-grey-dark, .4), rgba($color-grey-dark, .4)),
+		url(../img/restaurant-2.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: bottom;
+	height: 100vh;
+	clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+	display: grid;
+	justify-items: center;
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-columns: 1fr 60% 1fr;
+
+	&__header {
+		color: $color-grey-light;
+		grid-row: 1/2;
+        grid-column: 2/3;
+        align-self: flex-end;
+        padding-bottom: 10rem;
+	}
+
+	&__text {
+		color: $color-grey-light;
+		grid-row: 2/3;
+		grid-column: 2/3;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: .2rem;
+        align-self: flex-start;
+	}
+}

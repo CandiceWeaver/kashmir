@@ -1,0 +1,32 @@
+.footer {
+	background-color: $color-grey-dark;
+	display: grid;
+	grid-template-rows: repeat(2, max-content);
+	grid-template-columns: repeat(3, 63.3rem);
+	justify-items: center;
+    align-items: center;
+    padding: 3rem;
+
+	&__header {
+		color: $color-secondary;
+	}
+
+	&__img {
+		width: 60rem;
+		display: grid;
+        justify-self: center;
+        grid-column: 1/-1;
+        grid-row: 2/3;
+	}
+
+	&__phone {
+		color: $color-primary;
+
+		align-self: center;
+	}
+
+	&__address {
+		font-style: inherit;
+		font-weight: 700;
+	}
+}
