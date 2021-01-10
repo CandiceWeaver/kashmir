@@ -36,6 +36,10 @@
 			pointer-events: none;
 			list-style: none;
 			transition: all 0.3s;
+			
+			& > *{
+				padding: .5rem 0;
+			}
 		}
 
 		& input:checked ~ .menu__drawer--content {

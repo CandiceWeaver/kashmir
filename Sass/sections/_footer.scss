@@ -2,10 +2,15 @@
 	background-color: $color-grey-dark;
 	display: grid;
 	grid-template-rows: repeat(2, max-content);
-	grid-template-columns: repeat(3, 63.3rem);
+	grid-template-columns: repeat(3, minmax(max-content, 63.3rem));
 	justify-items: center;
-    align-items: center;
-    padding: 3rem;
+	align-items: center;
+	padding: 3rem;
+
+	@media only screen and (max-width: $bp-smallest) {
+		display: flex;
+		flex-direction: column;
+	}
 
 	&__header {
 		color: $color-secondary;
@@ -14,19 +19,37 @@
 	&__img {
 		width: 60rem;
 		display: grid;
-        justify-self: center;
-        grid-column: 1/-1;
-        grid-row: 2/3;
+		justify-self: center;
+		grid-column: 1/-1;
+		grid-row: 2/3;
+
+		@media only screen and (max-width: $bp-smallest) {
+			display: none;
+		}
 	}
 
 	&__phone {
 		color: $color-primary;
-
 		align-self: center;
+
+		@media only screen and (max-width: $bp-smallest) {
+			order: 1;
+			padding: 1rem;
+		}
 	}
 
 	&__address {
 		font-style: inherit;
 		font-weight: 700;
+
+		@media only screen and (max-width: $bp-smallest) {
+			order: 2;
+		}
+
+		& p {
+			@media only screen and (max-width: $bp-smallest) {
+				text-align: center;
+			}
+		}
 	}
 }

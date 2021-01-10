@@ -22,6 +22,15 @@ body {
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 84.4em) {
+    html {
+      font-size: 60%; } }
+  @media only screen and (max-width: 56.26em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 40.6em) {
+    html {
+      font-size: 40%; } }
 
 body {
   font-family: "Jura", sans-serif;
@@ -61,6 +70,9 @@ a {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1.5rem;
   margin: 0 1rem; }
+  @media only screen and (max-width: 56.26em) {
+    .food {
+      display: none; } }
   .food__overlay {
     opacity: 0; }
     .food__overlay--1 {
@@ -172,10 +184,14 @@ a {
   background-color: #212121;
   display: grid;
   grid-template-rows: repeat(2, max-content);
-  grid-template-columns: repeat(3, 63.3rem);
+  grid-template-columns: repeat(3, minmax(max-content, 63.3rem));
   justify-items: center;
   align-items: center;
   padding: 3rem; }
+  @media only screen and (max-width: 31.25em) {
+    .footer {
+      display: flex;
+      flex-direction: column; } }
   .footer__header {
     color: #a8293a; }
   .footer__img {
@@ -184,20 +200,31 @@ a {
     justify-self: center;
     grid-column: 1/-1;
     grid-row: 2/3; }
+    @media only screen and (max-width: 31.25em) {
+      .footer__img {
+        display: none; } }
   .footer__phone {
     color: #7e590f;
     align-self: center; }
+    @media only screen and (max-width: 31.25em) {
+      .footer__phone {
+        order: 1;
+        padding: 1rem; } }
   .footer__address {
     font-style: inherit;
     font-weight: 700; }
+    @media only screen and (max-width: 31.25em) {
+      .footer__address {
+        order: 2; } }
+    @media only screen and (max-width: 31.25em) {
+      .footer__address p {
+        text-align: center; } }
 
 .header {
   background-image: url(../img/restaurant.jpg);
   height: 100vh;
   background-size: cover;
   background-attachment: fixed; }
-  .header__phone {
-    color: #7e590f; }
   .header__heading {
     background-color: #212121;
     display: flex;
@@ -206,9 +233,29 @@ a {
     justify-content: space-around;
     align-items: center;
     padding: 3rem; }
+    @media only screen and (max-width: 75em) {
+      .header__heading {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, min-content);
+        grid-gap: 2rem; } }
+  .header__phone {
+    color: #7e590f; }
+    @media only screen and (max-width: 75em) {
+      .header__phone {
+        grid-row: 2/3;
+        grid-column: 1/2; } }
+  .header__header {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    text-align: center; }
   .header__address {
     font-style: inherit;
     font-weight: 700; }
+    @media only screen and (max-width: 75em) {
+      .header__address {
+        grid-row: 2/3;
+        grid-column: 2/3; } }
   .header__img {
     height: 86vh;
     width: 100%;
@@ -275,6 +322,8 @@ a {
       pointer-events: none;
       list-style: none;
       transition: all 0.3s; }
+      .menu__drawer--content > * {
+        padding: .5rem 0; }
     .menu__drawer input:checked ~ .menu__drawer--content {
       height: 100%;
       opacity: 1;
@@ -290,12 +339,18 @@ a {
 
 .reviews {
   display: grid;
-  grid-template-rows: repeat(2, min-content) 35vh;
+  grid-template-rows: repeat(3, max-content);
   grid-template-columns: 1fr repeat(3, 25%) 1fr;
   grid-gap: 4rem;
   justify-items: center;
   padding: 3rem;
   padding-bottom: 10rem; }
+  @media only screen and (max-width: 75em) {
+    .reviews {
+      grid-template-columns: repeat(3, 30%); } }
+  @media only screen and (max-width: 66.25em) {
+    .reviews {
+      grid-template-rows: repeat(5, max-content); } }
   .reviews__header {
     color: #a8293a;
     grid-row: 1/2;
@@ -304,18 +359,41 @@ a {
     grid-row: 2/3;
     grid-column: 2/span 3;
     text-align: center; }
+    @media only screen and (max-width: 75em) {
+      .reviews__text {
+        grid-column: 1/-1; } }
   .reviews__review {
     grid-row: 3/4;
-    background-color: #a8293a;
+    background-color: #7e590f;
     box-shadow: 2rem 2rem 4rem #030303;
     padding: 2rem;
     color: #efede1; }
     .reviews__review--1 {
       grid-column: 2/3; }
+      @media only screen and (max-width: 75em) {
+        .reviews__review--1 {
+          grid-column: 1/2; } }
+      @media only screen and (max-width: 66.25em) {
+        .reviews__review--1 {
+          grid-column: 1/-1; } }
     .reviews__review--2 {
       grid-column: 3/4; }
+      @media only screen and (max-width: 75em) {
+        .reviews__review--2 {
+          grid-column: 2/3; } }
+      @media only screen and (max-width: 66.25em) {
+        .reviews__review--2 {
+          grid-row: 4/5;
+          grid-column: 1/-1; } }
     .reviews__review--3 {
       grid-column: 4/5; }
+      @media only screen and (max-width: 75em) {
+        .reviews__review--3 {
+          grid-column: 3/4; } }
+      @media only screen and (max-width: 66.25em) {
+        .reviews__review--3 {
+          grid-row: 5/6;
+          grid-column: 1/-1; } }
     .reviews__review--fig {
       display: flex; }
     .reviews__review--caption {
@@ -342,14 +420,24 @@ a {
   clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
   display: grid;
   justify-items: center;
-  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  grid-template-rows: repeat(2, 50vh);
   grid-template-columns: 1fr 60% 1fr; }
+  @media only screen and (max-width: 75em) {
+    .story {
+      grid-template-columns: 100%; } }
+  @media only screen and (max-width: 40.6em) {
+    .story {
+      height: 70vh;
+      grid-template-rows: repeat(2, 50%); } }
   .story__header {
     color: #efede1;
     grid-row: 1/2;
     grid-column: 2/3;
-    align-self: flex-end;
     padding-bottom: 10rem; }
+    @media only screen and (max-width: 75em) {
+      .story__header {
+        grid-column: 1/2; } }
   .story__text {
     color: #efede1;
     grid-row: 2/3;
@@ -358,3 +446,6 @@ a {
     font-weight: 700;
     letter-spacing: .2rem;
     align-self: flex-start; }
+    @media only screen and (max-width: 75em) {
+      .story__text {
+        grid-column: 1/2; } }

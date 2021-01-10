@@ -10,6 +10,14 @@ $font-primary: 'Jura', sans-serif;
 // BOX SHADOW
 $shadow: 2rem 2rem 4rem #030303;
 
+// RESPONSIVE BREAKPOINTS	
+$bp-largest: 84.4em;
+$bp-large: 75em;
+$bp-medium: 66.25em;
+$bp-small: 56.26em;
+$bp-smaller: 40.6em;
+$bp-smallest: 31.25em;
+
 *,
 *::before,
 *::after {

@@ -4,10 +4,6 @@
 	background-size: cover;
 	background-attachment: fixed;
 
-	&__phone {
-		color: $color-primary;
-	}
-
 	&__heading {
 		background-color: $color-grey-dark;
 		display: flex;
@@ -16,11 +12,39 @@
 		justify-content: space-around;
 		align-items: center;
 		padding: 3rem;
+
+		@media only screen and (max-width: $bp-large) {
+			display: grid;
+			grid-template-columns: repeat(2, 50%);
+			grid-template-rows: repeat(2, min-content);
+			grid-gap: 2rem;
+		}
+	}
+
+	&__phone {
+		color: $color-primary;
+
+		@media only screen and (max-width: $bp-large) {
+			grid-row: 2/3;
+			grid-column: 1/2;
+		}
+	}
+
+	&__header {
+		grid-row: 1/2;
+		grid-column: 1/-1;
+		text-align: center;
+
 	}
 
 	&__address {
 		font-style: inherit;
 		font-weight: 700;
+
+		@media only screen and (max-width: $bp-large) {
+			grid-row: 2/3;
+			grid-column: 2/3;
+		}
 	}
 
 	&__img {

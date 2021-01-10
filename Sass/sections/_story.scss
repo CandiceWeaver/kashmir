@@ -8,24 +8,41 @@
 	clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
 	display: grid;
 	justify-items: center;
-	grid-template-rows: repeat(2, 1fr);
+	align-items: center;
+	grid-template-rows: repeat(2, 50vh);
 	grid-template-columns: 1fr 60% 1fr;
+
+	@media only screen and (max-width: $bp-large) {
+		grid-template-columns: 100%;
+	}
+
+	@media only screen and (max-width: $bp-smaller) {
+		height: 70vh;
+		grid-template-rows: repeat(2, 50%);
+	}
 
 	&__header {
 		color: $color-grey-light;
 		grid-row: 1/2;
-        grid-column: 2/3;
-        align-self: flex-end;
-        padding-bottom: 10rem;
+		grid-column: 2/3;
+		padding-bottom: 10rem;
+
+		@media only screen and (max-width: $bp-large) {
+			grid-column: 1/2;
+		}
 	}
 
 	&__text {
 		color: $color-grey-light;
 		grid-row: 2/3;
 		grid-column: 2/3;
-        text-align: center;
-        font-weight: 700;
-        letter-spacing: .2rem;
-        align-self: flex-start;
+		text-align: center;
+		font-weight: 700;
+		letter-spacing: .2rem;
+		align-self: flex-start;
+
+		@media only screen and (max-width: $bp-large) {
+			grid-column: 1/2;
+		}
 	}
 }
